@@ -2,7 +2,7 @@
 //  TableItem+CoreDataProperties.swift
 //  TableViewAddingAndPassingData
 //
-//  Created by Bartek on 6/30/20.
+//  Created by Bartek on 7/2/20.
 //  Copyright © 2020 Bartek. All rights reserved.
 //
 //
@@ -17,7 +17,7 @@ extension TableItem {
         return NSFetchRequest<TableItem>(entityName: "TableItem")
     }
 
-    @NSManaged public var tableImage: Data?
     @NSManaged public var imageName: String?
+    @NSManaged public var tableImage: Data?
 
 }

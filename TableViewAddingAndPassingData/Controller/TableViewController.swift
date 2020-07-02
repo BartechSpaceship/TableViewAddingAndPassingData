@@ -15,28 +15,37 @@ class TableViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var tables: [Table] = []
-    var coreTables = [TableItem]()
+    var tables = [TableItem]()
+   // var coreTables = [TableItem]()
     var newTitle = ""
     var image: UIImage? = nil
+    
+    
    
 
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
-        
-       
-         insertNewVideoTitle()
-        
+     
+        insertNewVideoTitle()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let fetchRequest: NSFetchRequest<TableItem> = TableItem.fetchRequest()
+               do{
+                   let tables = try PersistanceService.context.fetch(fetchRequest)
+                   self.tables = tables
+                   self.tableView.reloadData()
+               } catch {
+                   print("error")
+               }
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        
         
        
     
@@ -44,7 +53,7 @@ class TableViewController: UIViewController {
     @IBAction func cancelNavButton(_ sender: UIBarButtonItem) {
         
         self.navigationController?.popViewController(animated: true)
-        
+         
     }
     @IBAction func editNavButton(_ sender: UIBarButtonItem) {
     }
@@ -62,14 +71,8 @@ class TableViewController: UIViewController {
     }
     @IBAction func saveNavButton(_ sender: UIBarButtonItem) {
         
-          let coreTable = TableItem(context: PersistanceService.context)
-           let convertedImage = image?.pngData()
-          coreTable.imageName = newTitle
-          coreTable.tableImage = convertedImage
-        
-        PersistanceService.saveContext()
-        coreTables.append(coreTable)
-        tableView.reloadData()
+
+       
         
         self.navigationController?.popToRootViewController(animated: true)
 
@@ -81,9 +84,19 @@ class TableViewController: UIViewController {
         
         //append the new protocol ? vs new
         if image != nil {
-          
-        tables.append(Table(image: image!, label: newTitle))
-    
+            let coreTable = TableItem(context: PersistanceService.context)
+                     let convertedImage = image?.pngData()
+                      coreTable.imageName = newTitle
+                      coreTable.tableImage = convertedImage
+            PersistanceService.saveContext()
+            
+            
+
+                    
+                    tables.append(coreTable)
+                    tableView.reloadData()
+      
+
             
             tableView.reloadData()
     
@@ -94,20 +107,31 @@ class TableViewController: UIViewController {
 }
 
 extension TableViewController: UITableViewDataSource, UITableViewDelegate {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        tables.count
+        return tables.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let table = tables[indexPath.row]
+       // let table = tables[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! TableViewCell
         
-        //let convertedCell = cell.tableImageView.image?.pngData()
+      //  let convertedCell = cell.tableImageView.image?.pngData()
         
-//        cell.tableImageView.image = UIImage(data: coreTables[indexPath.row - 1].tableImage!)
-//        cell.tableLabel.text = coreTables[indexPath.row].imageName
+
+     
+        cell.tableImageView.image = UIImage(data: tables[indexPath.row].tableImage!)
+        cell.tableLabel.text = tables[indexPath.row].imageName
+
 //
+//        cell.tableImageView.image = tables[indexPath.row].image
+//        cell.tableLabel.text = tables[indexPath.row].label
+        
+        
+
         
 //        func setTable(table: Table) {
 //             tableImageView.image = table.image
@@ -115,7 +139,7 @@ extension TableViewController: UITableViewDataSource, UITableViewDelegate {
 //         }
 //
         
-      cell.setTable(table: table)
+  //    cell.setTable(table: table)
         
         return cell
         
@@ -126,9 +150,12 @@ extension TableViewController: UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            
+           // tables.remove(at: indexPath.row)
             tables.remove(at: indexPath.row)
             
             tableView.beginUpdates()
+            
             tableView.deleteRows(at: [indexPath], with: .automatic)
             tableView.endUpdates()
         }

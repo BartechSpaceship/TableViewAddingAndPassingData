@@ -13,9 +13,9 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var tableImageView: UIImageView!
     @IBOutlet weak var tableLabel: UILabel!
     
-    func setTable(table: Table) {
-        tableImageView.image = table.image
-        tableLabel.text = table.label
-    }
+//    func setTable(table: Table) {
+//        tableImageView.image = table.image
+//        tableLabel.text = table.label
+//    }
     
 }
