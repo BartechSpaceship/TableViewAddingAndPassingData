@@ -20,8 +20,8 @@
 		9321813624A6BCB400ABFFBB /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9321813524A6BCB400ABFFBB /* TableViewController.swift */; };
 		9367243E24AB8D8D00B1A7E0 /* PersistanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367243D24AB8D8D00B1A7E0 /* PersistanceService.swift */; };
 		936724A524AE4F2B00B1A7E0 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 936724A324AE4F2B00B1A7E0 /* CoreData.xcdatamodeld */; };
-		936724A824AE4F8600B1A7E0 /* TableItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936724A624AE4F8600B1A7E0 /* TableItem+CoreDataClass.swift */; };
-		936724A924AE4F8600B1A7E0 /* TableItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936724A724AE4F8600B1A7E0 /* TableItem+CoreDataProperties.swift */; };
+		936724AF24B62C8000B1A7E0 /* TableItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936724AD24B62C8000B1A7E0 /* TableItem+CoreDataClass.swift */; };
+		936724B024B62C8000B1A7E0 /* TableItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936724AE24B62C8000B1A7E0 /* TableItem+CoreDataProperties.swift */; };
 		93D8238F24A84CE900624F48 /* CreationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D8238E24A84CE900624F48 /* CreationController.swift */; };
 		93D8239124A84E1D00624F48 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D8239024A84E1D00624F48 /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -63,8 +63,8 @@
 		9321813524A6BCB400ABFFBB /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		9367243D24AB8D8D00B1A7E0 /* PersistanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceService.swift; sourceTree = "<group>"; };
 		936724A424AE4F2B00B1A7E0 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
-		936724A624AE4F8600B1A7E0 /* TableItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TableItem+CoreDataClass.swift"; path = "TableViewAddingAndPassingData/TableItem+CoreDataClass.swift"; sourceTree = "<group>"; };
-		936724A724AE4F8600B1A7E0 /* TableItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TableItem+CoreDataProperties.swift"; path = "TableViewAddingAndPassingData/TableItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		936724AD24B62C8000B1A7E0 /* TableItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		936724AE24B62C8000B1A7E0 /* TableItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		93D8238E24A84CE900624F48 /* CreationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationController.swift; sourceTree = "<group>"; };
 		93D8239024A84E1D00624F48 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,8 +97,8 @@
 		932180F524A6A5F800ABFFBB = {
 			isa = PBXGroup;
 			children = (
-				936724A624AE4F8600B1A7E0 /* TableItem+CoreDataClass.swift */,
-				936724A724AE4F8600B1A7E0 /* TableItem+CoreDataProperties.swift */,
+				936724AD24B62C8000B1A7E0 /* TableItem+CoreDataClass.swift */,
+				936724AE24B62C8000B1A7E0 /* TableItem+CoreDataProperties.swift */,
 				9321810024A6A5F800ABFFBB /* TableViewAddingAndPassingData */,
 				9321811724A6A5FB00ABFFBB /* TableViewAddingAndPassingDataTests */,
 				9321812224A6A5FB00ABFFBB /* TableViewAddingAndPassingDataUITests */,
@@ -327,7 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9321810624A6A5F900ABFFBB /* ViewController.swift in Sources */,
-				936724A824AE4F8600B1A7E0 /* TableItem+CoreDataClass.swift in Sources */,
+				936724AF24B62C8000B1A7E0 /* TableItem+CoreDataClass.swift in Sources */,
 				9321813624A6BCB400ABFFBB /* TableViewController.swift in Sources */,
 				936724A524AE4F2B00B1A7E0 /* CoreData.xcdatamodeld in Sources */,
 				93D8239124A84E1D00624F48 /* CollectionViewCell.swift in Sources */,
@@ -337,7 +337,7 @@
 				9321810224A6A5F800ABFFBB /* AppDelegate.swift in Sources */,
 				9321810424A6A5F800ABFFBB /* SceneDelegate.swift in Sources */,
 				9367243E24AB8D8D00B1A7E0 /* PersistanceService.swift in Sources */,
-				936724A924AE4F8600B1A7E0 /* TableItem+CoreDataProperties.swift in Sources */,
+				936724B024B62C8000B1A7E0 /* TableItem+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

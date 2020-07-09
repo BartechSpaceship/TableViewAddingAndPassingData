@@ -46,12 +46,12 @@
                     <navigationItem key="navigationItem" id="tne-Hi-59a"/>
                     <connections>
                         <outlet property="label" destination="ixY-rY-n0I" id="Ef0-1U-s3B"/>
-                        <segue destination="9Wn-3w-hAD" kind="show" id="Wy7-qG-aDb"/>
+                        <segue destination="9Wn-3w-hAD" kind="show" id="RSy-3T-OgN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+            <point key="canvasLocation" x="987" y="138"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="FGH-fE-vEV">

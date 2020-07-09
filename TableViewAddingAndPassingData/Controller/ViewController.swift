@@ -8,9 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController{
 
     @IBOutlet weak var label: UILabel!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +26,10 @@ class ViewController: UIViewController {
     @IBAction func button(_ sender: UIButton) {
         let tableVC = storyboard?.instantiateViewController(withIdentifier: "TableViewController") as! TableViewController
         
+   
+        tableVC.cellDelegate = self
+         
+//
         self.navigationController?.pushViewController(tableVC, animated: true)
         
         
@@ -29,3 +39,10 @@ class ViewController: UIViewController {
     
 }
 
+extension ViewController: PushTheAmountOfCellsProtocol {
+    func getAmountOfCells(amountOfCells: Int) {
+        label.text = "there are \(String(amountOfCells)) Cells"
+    }
+    
+    
+}
